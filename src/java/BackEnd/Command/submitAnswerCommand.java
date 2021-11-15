@@ -22,7 +22,7 @@ public class submitAnswerCommand extends Command {
     @Override
     public Object execute() {
         TestReader testReader = new ReadQuestions(testID);
-        String question = (String) testReader.read();
+        String question =  testReader.read().toString();
         if (question.equals(FAILED + "")) {
             return FAILED;
         }

@@ -14,7 +14,7 @@ public class ReadAllAnswers extends TestReader {
     @Override
     public Object read() {
 
-        String allQuestionID = (String) new ReadQuestions(testID).read();
+        String allQuestionID =  new ReadQuestions(testID).read().toString();
         if (allQuestionID.equals(FAILED + "")) {
             return new String[0];
         }

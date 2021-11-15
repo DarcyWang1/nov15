@@ -43,6 +43,10 @@ public class JoinGroupServlet extends testServlet {
         //userGroupManager.addStudentToGroup(getUserId(request), Integer.parseInt(request.getParameter("groupId")));
         response.sendRedirect("JoinGroupServlet");
     }
+    public void back(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.sendRedirect("StudentPageServlet");
+    }
 
 
 }

@@ -41,11 +41,11 @@ public class TestSubmitionServlet extends testServlet {
         int studentId = Integer.parseInt(request.getParameter("studentId"));
         request.setAttribute("studentId", studentId);;
         //if(userGroupManager.getSubmition(groupId, testId)!=null){
-        String[] ques = (String[])(new BackEnd.Read.Test.ReadQuestionsID(testId)).read();
+        int[] ques = (int[])(new BackEnd.Read.Test.ReadQuestionsID(testId)).read();
         
         String[] answers = new String[ques.length];
            for(int i=0;i<ques.length;i++){
-               answers[i]=(String)(new BackEnd.Read.Answer.ReadAnswerByMore(studentId, Integer.parseInt(ques[i]), groupId)).read();
+               answers[i]=(new BackEnd.Read.Answer.ReadAnswerByMore(studentId, ques[i], groupId)).read().toString();
            }//(String[])(new BackEnd.Read.Answer.ReadAnswerByMore(studentId, testId, groupId)).read();
         //String[] answers = userGroupManager.getSubmition(groupId, testId).get(studentId);
         request.setAttribute("answers", answers);  

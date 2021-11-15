@@ -57,8 +57,8 @@ public class TeacherPageServlet extends testServlet {
             }
         }else{
             //(List<Integer>)(new BackEnd.Read.Teacher.ReadGroups(userId)).read();
-            out.print(userId);
-            out.print((new BackEnd.Read.Teacher.ReadGroups(userId)).read());
+            //out.print(userId);
+            //out.print((new BackEnd.Read.Teacher.ReadGroups(userId)).read());
             List<Integer> groups=(List<Integer>)((new BackEnd.Read.Teacher.ReadGroups(userId)).read());
             
             out.print((new BackEnd.Read.Teacher.ReadName(userId)).read()+"'s page:<br>groups:<br>");

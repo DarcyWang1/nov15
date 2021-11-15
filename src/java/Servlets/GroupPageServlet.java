@@ -188,7 +188,13 @@ public class GroupPageServlet extends testServlet {
         request.setAttribute("testId", testId);
         int groupId=Integer.parseInt(request.getParameter("groupId"));
         request.setAttribute("groupId", groupId);
-        int[] students= (int[])(new BackEnd.Read.Group.ReadStudents(groupId)).read();
+        String[] stu = ((String)(new BackEnd.Read.Group.ReadStudents(groupId)).read()).split(",");
+        int[] students = new int[stu.length];
+        for(int i=0; i<stu.length;i++){
+            if(!stu[i].equals("")){
+            students[i]=Integer.parseInt(stu[i]);
+            }
+        }
         request.setAttribute("students", students);
         for(int i=0;i<students.length;i++){
             if(students[i]!=0){

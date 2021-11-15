@@ -13,10 +13,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action ="StudentPageServlet" method="Post" style="width:90%">
+       <%-- <form action ="StudentPageServlet" method="Post" style="width:90%">
             <input type="text" id="word" name="word">
             <input type="submit" name="act" id="act" value="search">
-        </form>
+        </form>--%>
         <div style="width: 50%; float:left">
             <%
                 HashMap<Integer,String> joinedGroup =(HashMap<Integer,String>) request.getAttribute("joinedGroup");
@@ -35,10 +35,12 @@
             <input type="submit" name="act" id="act" value="JoinGroup">
         </form>
         </div>
+        <%--
         <div style="width: 50%; float:left">
             <form action="StudentPageServlet" method="Post">
                 <input type="submit" name="act" id="act" value="learn">                
             </form>
         </div>
+        --%>
     </body>
 </html>

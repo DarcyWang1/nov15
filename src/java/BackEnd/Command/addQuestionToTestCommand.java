@@ -3,6 +3,8 @@ package BackEnd.Command;
 import BackEnd.Read.Question.ReadID;
 import BackEnd.Read.Test.ReadQuestions;
 import BackEnd.Read.Test.TestReader;
+import BackEnd.Write.Question.QuestionWriter;
+import BackEnd.Write.Question.WriteNewQuestion;
 import BackEnd.Write.Test.TestWriter;
 import BackEnd.Write.Test.WriteQuestions;
 
@@ -18,6 +20,8 @@ public class addQuestionToTestCommand extends Command {
 
     public addQuestionToTestCommand(int testID, String question, String answer, int mark) {
         this.testID = testID;
+        QuestionWriter writer = new WriteNewQuestion("question",question,answer,mark);
+        writer.set();
         this.questionID = (int) new ReadID(question, answer).read();
     }
 
